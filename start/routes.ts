@@ -30,7 +30,7 @@ router
             router.get('drug-brand', [DrugBrandController, 'readAll'])
             router.delete('drug-brand/:id', [DrugBrandController, 'delete'])
             router.post('drug-name', [DrugNameController, 'create'])
-            router.get('drug-name', [DrugNameController, 'readAll'])
+            router.get('drug-name', [DrugNameController, 'readAllByDrugBrandId'])
             router.delete('drug-name/:id', [DrugNameController, 'delete'])
             router.post('user-drug', [UserDrugController, 'create'])
             router.get('user-drug', [UserDrugController, 'readAll'])

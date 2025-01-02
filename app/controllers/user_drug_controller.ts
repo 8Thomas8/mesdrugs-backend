@@ -28,11 +28,7 @@ export default class UserDrugController {
         await request.validateUsing(createUserDrugValidator)
       await auth.authenticate()
 
-      await UserDrug.create({ drugBrandId, drugNameId, unit, form, dose, expirationDateTime, note })
-
-      return response.created({
-        message: 'User drug created successfully',
-      })
+      return response.created( await UserDrug.create({ drugBrandId, drugNameId, unit, form, dose, expirationDateTime, note }))
     } catch (error) {
       console.log(error)
       return response.badRequest({
